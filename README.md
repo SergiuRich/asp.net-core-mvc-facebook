@@ -25,5 +25,7 @@ https://steemit.com/utopian-io/@babelek/how-to-create-facebook-login-in-asp-net-
 
 https://retifrav.github.io/blog/2017/11/25/csharp-dotnet-core-publish-facebook/
 
+https://docs.microsoft.com/en-us/aspnet/core/security/authentication/social/additional-claims?view=aspnetcore-2.1
+
 
  
