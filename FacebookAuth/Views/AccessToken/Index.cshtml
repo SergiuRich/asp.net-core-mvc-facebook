@@ -1,0 +1,19 @@
+﻿@model FacebookAuth.Controllers.AccessTokenController.AccessTokenViewModel
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+
+<h3>@Model.Message</h3>
+
+
+<div class="form-group">
+    <label for="code">Authoization Code</label>
+    <textarea class="form-control" rows="5" id="code">@Model.Code</textarea>
+
+    <label for="token">Authoization Token</label>
+    <textarea class="form-control" rows="5" id="token">@Model.AccessToken</textarea>
+    <br/>
+    
+</div>

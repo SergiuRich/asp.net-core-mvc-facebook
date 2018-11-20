@@ -1,0 +1,27 @@
+﻿@model UserAccountViewModel
+
+@{
+    ViewData["Title"] = "About";
+}
+<h2>@ViewData["Title"]</h2>
+
+<div class="row">
+
+    <div class="col-lg-5">
+        <div class="media">
+            <a class="pull-left" href="#">
+                <img class="media-object dp img-circle" src="@Model.PictureUrl" style="width: 100px; height: 100px;">
+            </a>
+            <div class="media-body">
+                <span></span>
+                <h3>@ViewData["Message"]</h3>
+                <h4 class="media-heading">@Model.FirstName<small> @Model.LastName</small></h4>
+                <h5>Email: <a href="mailto:@Model.Email">@Model.Email</a></h5>
+                <hr style="margin: 8px auto">
+                <span class="label label-default">Id: @Model.Id</span>
+                <span class="label label-default">Locale: @Model.Locale</span>
+            </div>
+        </div>
+    </div>
+
+</div>
