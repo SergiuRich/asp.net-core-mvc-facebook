@@ -11,11 +11,11 @@ http://ankitsharmablogs.com/authentication-using-facebook-in-asp-net-core-2-0/
 A few more changes were added:
 
 ## Access Token Page:
-In order to get the access token from facebook, there is a prvioues step to get the authorization code.
+In order to get the access token from facebook, there is a previous step to get the authorization code.
 Having the Authorization code we can use a new request to get the access token. 
 More details can be found on the AccessTokenController.
 
-In the same time added a few Facebook Services in order to get the user details and to add some text on post.
+Added a few Facebook Services in order to get the user details and to add some text on a post: FacebookService.cs, Facebook.cs
 
 
 Here are few urls that helped:
