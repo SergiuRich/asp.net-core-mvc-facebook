@@ -23,6 +23,10 @@ namespace FacebookAuth.Services
         /// <returns></returns>
         public string GetAuthorizationCodeUrl(string scope, string redirectUri)
         {
+            if (string.IsNullOrEmpty(scope))
+            {
+                return string.Empty;
+            }
             var queryParams = new Dictionary<string, string>()
             {
                 {"client_id", Startup.FacebookSettings.AppId},

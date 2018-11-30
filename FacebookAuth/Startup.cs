@@ -21,6 +21,7 @@ namespace FacebookAuth
         {
             public static string AppId { get; set; }
             public static string AppSecret { get; set; }
+            public static string Scope { get; set; }
         }
         public Startup(IConfiguration configuration)
         {
@@ -45,6 +46,7 @@ namespace FacebookAuth
                 facebookOptions.AppSecret = Configuration["Authentication:Facebook:AppSecret"];
                 FacebookSettings.AppId = facebookOptions.AppId;
                 FacebookSettings.AppSecret = facebookOptions.AppSecret;
+                FacebookSettings.Scope = Configuration["Facebook:Scope"];
 
                 //facebookOptions.CallbackPath = new PathString("/SignInFacebook");
                 facebookOptions.SaveTokens = true;

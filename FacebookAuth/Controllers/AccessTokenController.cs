@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using FacebookAuth.Services;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.Extensions;
 using Microsoft.AspNetCore.Mvc;
@@ -25,7 +26,7 @@ namespace FacebookAuth.Controllers
 
             string code = HttpContext.Request.Query["code"].ToString();
 
-            string scope = "email,manage_pages,publish_pages,publish_to_groups";//user_posts,publish_pages,user_videos
+            string scope = Startup.FacebookSettings.Scope;
             var redirectUri = HttpContext?.Request?.GetDisplayUrl();
 
             var tokenServcice = new AccessTokenService();
@@ -34,6 +35,16 @@ namespace FacebookAuth.Controllers
                 accessTokenViewModel.Code = code;
 
                 var accessToken = tokenServcice.GetAccessToken(scope, redirectUri, code);
+
+                //https://stackoverflow.com/questions/49768774/how-to-get-access-token-from-httpcontext-in-net-core-2-0
+                //https://csharp.hotexamples.com/examples/Facebook/FacebookClient/GetTaskAsync/php-facebookclient-gettaskasync-method-examples.html
+
+                //var accessToken2 = string.Empty;
+
+                //var accessToken3 = HttpContext.GetTokenAsync("access_token").Result;
+                //var accessTokenObj = HttpContext.Items["access_token1"];
+                //if (accessTokenObj != null)
+                //    accessToken2 = accessTokenObj.ToString();
 
                 if (!string.IsNullOrEmpty(accessToken))
                 {
